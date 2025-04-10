@@ -1,6 +1,6 @@
 # haxdhskt-site
 
-💻 Site pessoal do **haxdhskt**, inspirado no estilo visual de [Konect.gg](https://konect.gg) e no layout do site [3drz.squareweb.app](https://3drz.squareweb.app/), com animações, glassmorphism, tilt 3D e design responsivo para PC.
+💻 Site pessoal do **haxdhskt**, inspirado no estilo visual de [Konect.gg](https://konect.gg) com animações, glassmorphism, tilt 3D e design responsivo para PC.
 
 ## 🔗 Site ao vivo
 
