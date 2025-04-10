@@ -1,108 +1,120 @@
+/* Fundo geral com imagem escura */
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  padding: 0;
   background: url('https://i.pinimg.com/736x/c8/46/da/c846da2a89884e1d639f8ba110444409.jpg') no-repeat center center fixed;
   background-size: cover;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Container principal (perfil + config lado a lado) */
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  color: #fff;
+  gap: 60px;
+  height: 100vh;
+  padding: 20px;
 }
 
-.container {
-  display: flex;
-  gap: 2rem;
-  padding: 2rem;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 2rem;
-  box-shadow: 0 0 30px rgba(0,0,0,0.5);
-}
-
+/* Cards de vidro (efeito glassmorphism) */
 .card {
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(10px);
-  border-radius: 1.5rem;
-  padding: 2rem;
-  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border-radius: 24px;
+  padding: 30px;
 }
 
-.profile-card {
+/* Card do perfil */
+.profile {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 250px;
+  width: 280px;
   text-align: center;
 }
 
-.avatar {
+.profile img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  margin-bottom: 1rem;
+  margin-bottom: 12px;
 }
 
-.socials {
+.profile h2 {
+  font-size: 1.4rem;
+  margin: 0 0 10px;
+}
+
+.social-icons {
   display: flex;
-  gap: 1rem;
-  margin: 1rem 0;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 15px;
 }
 
-.socials a {
+.social-icons a {
   color: white;
-  transition: color 0.3s;
+  font-size: 18px;
+  transition: 0.3s;
 }
 
-.socials a:hover {
-  color: #999;
+.social-icons a:hover {
+  transform: scale(1.2);
 }
 
-.info-button {
-  background: white;
+.profile button {
+  background-color: white;
   color: black;
   border: none;
-  padding: 0.5rem 1.5rem;
+  padding: 8px 18px;
+  border-radius: 12px;
   font-weight: 600;
-  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 
-.info-button:hover {
-  background: #e0e0e0;
+.profile button:hover {
+  background-color: #eee;
 }
 
-.setup-card {
-  width: 500px;
+/* Card de configuração */
+.config {
+  width: 420px;
 }
 
-.setup-card h3 {
+.config h3 {
   text-align: center;
-  margin-bottom: 1.5rem;
   font-size: 1.5rem;
+  margin-bottom: 24px;
 }
 
-.setup-grid {
+.config-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 20px;
 }
 
-.setup-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.config-item {
   background: rgba(255, 255, 255, 0.05);
-  padding: 1rem;
-  border-radius: 1rem;
-  transition: transform 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-.setup-item i {
-  width: 24px;
-  height: 24px;
+.config-item:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
-.setup-item:hover {
-  transform: scale(1.05);
+/* Ícones maiores */
+.config-item i {
+  font-size: 26px;
+  display: block;
+  margin-bottom: 8px;
 }
