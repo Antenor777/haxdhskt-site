@@ -1,87 +1,87 @@
 body {
   margin: 0;
   padding: 0;
-  background: url('https://i.imgur.com/7Uh0Y90.jpeg') no-repeat center center fixed;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('https://i.pinimg.com/736x/c8/46/da/c846da2a89884e1d639f8ba110444409.jpg');
   background-size: cover;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
+  background-position: center;
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   gap: 40px;
   flex-wrap: wrap;
-  padding: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
 }
 
 .card {
-  background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
-  padding: 30px 40px;
-  max-width: 350px;
-  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  color: white;
   text-align: center;
+  width: 280px;
+  transition: transform 0.3s ease;
 }
 
-.card img {
-  border-radius: 50%;
+.card:hover {
+  transform: scale(1.03);
+}
+
+.avatar {
   width: 100px;
   height: 100px;
+  border-radius: 50%;
   object-fit: cover;
-  border: 2px solid white;
-}
-
-.username {
-  font-size: 1.4em;
-  font-weight: bold;
-  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .socials {
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
-.socials a {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 10px;
-  border-radius: 50%;
-  transition: 0.3s ease;
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
+.socials img {
+  width: 26px;
+  height: 26px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease;
 }
 
-.socials a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+.socials img:hover {
+  transform: scale(1.2);
 }
 
 .info-button {
-  background-color: white;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 10px;
+  margin-top: 10px;
+  padding: 8px 16px;
   border: none;
-  margin-top: 15px;
+  background: white;
+  color: black;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
 }
 
-.setup-title {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
+/* Responsivo */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
 
-.setup-list {
-  text-align: left;
-  line-height: 1.8;
-  font-size: 1em;
+  .card {
+    width: 90%;
+    max-width: 350px;
+  }
 }
