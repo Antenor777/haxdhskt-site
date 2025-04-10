@@ -4,177 +4,49 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>haxdhskt</title>
-  
-  <!-- Font Awesome e Tilt -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-
-  <!-- Favicon e Estilo -->
-  <link rel="icon" href="assets/imagens/logo.png" type="image/png">
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Bolha azul neon -->
+  <div id="background"></div>
+
   <div class="bubble"></div>
 
-  <!-- Tela de introdução -->
-  <div id="intro-screen">
-    <h1>erstellt von haxdhskt</h1>
-    <p>Clique em qualquer lugar para continuar</p>
-  </div>
-
-  <div class="container" style="display: none;">
-    <!-- Controle de Música -->
-    <div class="music-control">
-      <button id="muteBtn" title="Mutar/Desmutar">
-        <i class="fas fa-volume-up"></i>
-      </button>
-      <div class="volume-control">
-        <i class="fas fa-volume-down"></i>
-        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.3" title="Controlar volume">
-        <i class="fas fa-volume-up"></i>
+  <main class="container">
+    <section class="profile">
+      <img class="profile-pic" src="https://i.pinimg.com/736x/9c/ad/ba/9cadbad08a172bed4b3b1199ec478432.jpg" alt="Profile" />
+      <h1>@haxdhskt</h1>
+      <div class="socials">
+        <a href="https://discord.gg/zPWNEAsZK9" target="_blank"><i class="fab fa-discord"></i></a>
+        <a href="https://youtube.com/@diabolicboyff?si=RpFjVZlU4GZhOI3Z" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/diabolicboy_" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@diabolicboy_" target="_blank"><i class="fab fa-tiktok"></i></a>
       </div>
-    </div>
+    </section>
 
-    <!-- CARD DE PERFIL -->
-    <div class="card card1">
-      <h2><i class="fas fa-check-circle verified-badge"></i> haxdhskt</h2>
-      <img src="assets/imagens/profile1.gif" alt="" class="produto"/>
+    <section class="cards">
+      <div class="card tilt"><i class="fas fa-microchip"></i><span>Intel Core i5-9400F</span></div>
+      <div class="card tilt"><i class="fas fa-video"></i><span>RTX 3050</span></div>
+      <div class="card tilt"><i class="fas fa-memory"></i><span>16GB RAM</span></div>
+      <div class="card tilt"><i class="fas fa-keyboard"></i><span>Razer DeathStalker V2 Pro</span></div>
+      <div class="card tilt"><i class="fas fa-mouse"></i><span>Razer Basilisk V3 Pro</span></div>
+      <div class="card tilt"><i class="fas fa-headphones"></i><span>Redragon Lamia V2</span></div>
+    </section>
 
-      <div class="social-buttons">
-        <a href="https://www.instagram.com/diabolicboy_" class="social-btn instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/@diabolicboyff" class="social-btn youtube" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.tiktok.com/@diabolicboy_" class="social-btn twitch" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://discord.gg/zPWNEAsZK9" class="social-btn discord" target="_blank"><i class="fab fa-discord"></i></a>
-      </div>
+    <audio controls autoplay loop>
+      <source src="https://cdn.pixabay.com/audio/2023/03/28/audio_9c14e44dbe.mp3" type="audio/mpeg">
+      Seu navegador não suporta o player de áudio.
+    </audio>
+  </main>
 
-      <button onclick="abrirModal()">Info</button>
-    </div>
-
-    <!-- CARD DE CONFIG -->
-    <div class="card card2">
-      <h2>Config</h2>
-      <div class="peripherals-container">
-        <!-- CPU -->
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <div class="peripheral-icon"><img src="assets/imagens/cpu.png" alt="CPU"></div>
-              <div class="peripheral-text">CPU</div>
-            </div>
-            <div class="peripheral-item-back"><p>i5-9400F</p></div>
-          </div>
-        </div>
-        <!-- GPU -->
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <div class="peripheral-icon"><img src="assets/imagens/placa-de-video.png" alt="GPU"></div>
-              <div class="peripheral-text">GPU</div>
-            </div>
-            <div class="peripheral-item-back"><p>RTX 3050</p></div>
-          </div>
-        </div>
-        <!-- RAM -->
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <div class="peripheral-icon"><img src="assets/imagens/ram.png" alt="RAM"></div>
-              <div class="peripheral-text">RAM</div>
-            </div>
-            <div class="peripheral-item-back"><p>16GB RAM</p></div>
-          </div>
-        </div>
-        <!-- Teclado -->
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <div class="peripheral-icon"><img src="assets/imagens/teclado.png" alt="Teclado"></div>
-              <div class="peripheral-text">Teclado</div>
-            </div>
-            <div class="peripheral-item-back"><p>Razer DeathStalker V2 Pro</p></div>
-          </div>
-        </div>
-        <!-- Mouse -->
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <div class="peripheral-icon"><img src="assets/imagens/mouse.png" alt="Mouse"></div>
-              <div class="peripheral-text">Mouse</div>
-            </div>
-            <div class="peripheral-item-back"><p>Razer Basilisk V3 Pro</p></div>
-          </div>
-        </div>
-        <!-- Headset -->
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <div class="peripheral-icon"><img src="assets/imagens/headset.png" alt="Headset"></div>
-              <div class="peripheral-text">Headset</div>
-            </div>
-            <div class="peripheral-item-back"><p>Redragon Lamia V2</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal -->
-  <div class="janela-modal" id="janela-modal">
-    <div class="modal">
-      <button class="fechar" id="fechar">X</button>
-      <h1>Sobre mim</h1>
-      <p>Este é um projeto inspirado em Konect.gg com visual futurista baseado em glassmorphism.</p>
-    </div>
-  </div>
-
-  <!-- Música de fundo -->
-  <audio id="bgMusic" loop autoplay>
-    <source src="assets/musica/musicrztime.mp3" type="audio/mpeg">
-  </audio>
-
-  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
   <script>
-    document.getElementById('intro-screen').addEventListener('click', function () {
-      this.style.display = 'none';
-      document.querySelector('.container').style.display = 'flex';
-    });
-
-    VanillaTilt.init(document.querySelectorAll(".card"), {
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
       max: 25,
       speed: 400,
       glare: true,
-      "max-glare": 0.5,
+      "max-glare": 0.3
     });
-
-    // Modal
-    function abrirModal() {
-      document.getElementById('janela-modal').style.display = 'flex';
-    }
-    function fecharModal() {
-      document.getElementById('janela-modal').style.display = 'none';
-    }
-    document.getElementById('fechar').addEventListener('click', fecharModal);
-    document.getElementById('janela-modal').addEventListener('click', function (e) {
-      if (e.target === this) fecharModal();
-    });
-
-    // Música
-    const music = document.getElementById("bgMusic");
-    const muteBtn = document.getElementById("muteBtn");
-    const volumeSlider = document.getElementById("volumeSlider");
-
-    muteBtn.addEventListener("click", () => {
-      music.muted = !music.muted;
-      muteBtn.innerHTML = `<i class="fas ${music.muted ? 'fa-volume-mute' : 'fa-volume-up'}"></i>`;
-    });
-
-    volumeSlider.addEventListener("input", () => {
-      music.volume = volumeSlider.value;
-    });
-
-    music.volume = volumeSlider.value;
-    music.play();
   </script>
 </body>
 </html>
