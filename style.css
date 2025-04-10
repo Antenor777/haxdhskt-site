@@ -3,34 +3,33 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: url('https://i.pinimg.com/736x/c8/46/da/c846da2a89884e1d639f8ba110444409.jpg') no-repeat center center fixed;
   background-size: cover;
+  position: relative;
+  z-index: 1;
 }
 
-/* 🎈 Bolha animada */
 .bubble {
   position: fixed;
-  top: 50%;
+  top: 30%;
   left: 50%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent 70%);
+  width: 600px;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 50%;
-  backdrop-filter: blur(80px);
-  filter: blur(40px);
+  filter: blur(80px);
   transform: translate(-50%, -50%);
-  animation: float 10s ease-in-out infinite;
+  animation: float 12s ease-in-out infinite;
   z-index: 0;
-  pointer-events: none;
 }
 
 @keyframes float {
   0% {
-    transform: translate(-50%, -50%) translateY(0px);
+    transform: translate(-50%, -50%) scale(1);
   }
   50% {
-    transform: translate(-50%, -50%) translateY(-20px);
+    transform: translate(-48%, -52%) scale(1.05);
   }
   100% {
-    transform: translate(-50%, -50%) translateY(0px);
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 
@@ -42,7 +41,7 @@ body {
   padding: 50px;
   gap: 40px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .profile {
