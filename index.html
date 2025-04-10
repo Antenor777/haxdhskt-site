@@ -5,45 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>haxdhskt</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/imagens/logo.png" type="image/png" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
   <div class="background"></div>
-  <div class="bubble"></div>
 
   <div class="container">
-    <div class="card tilt">
-      <img class="profile-img" src="https://i.pinimg.com/736x/9c/ad/ba/9cadbad08a172bed4b3b1199ec478432.jpg" alt="Profile" />
-      <h1 class="username">haxdhskt <i class="fas fa-check-circle verified"></i></h1>
+    <div class="card profile" data-tilt>
+      <img class="avatar" src="https://i.pinimg.com/736x/9c/ad/ba/9cadbad08a172bed4b3b1199ec478432.jpg" alt="Profile" />
+      <h1>haxdhskt</h1>
 
-      <div class="socials">
+      <div class="social-icons">
         <a href="https://discord.gg/zPWNEAsZK9" target="_blank"><i class="fab fa-discord"></i></a>
         <a href="https://youtube.com/@diabolicboyff?si=RpFjVZlU4GZhOI3Z" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/diabolicboy_?igsh=ajVpM3Y0cWxmbm5w" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@diabolicboy_?_t=ZM-8vPpH0O8z4Q&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/diabolicboy_" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@diabolicboy_" target="_blank"><i class="fab fa-tiktok"></i></a>
       </div>
     </div>
 
-    <div class="card setup tilt">
+    <div class="card setup" data-tilt>
       <h2>Setup</h2>
-      <div class="setup-grid">
-        <div class="setup-item"><i class="fas fa-microchip"></i> i5-9400F</div>
-        <div class="setup-item"><i class="fas fa-video"></i> RTX 3050</div>
-        <div class="setup-item"><i class="fas fa-memory"></i> 16GB RAM</div>
-        <div class="setup-item"><i class="fas fa-keyboard"></i> Razer DeathStalker V2 Pro</div>
-        <div class="setup-item"><i class="fas fa-mouse"></i> Razer Basilisk V3 Pro</div>
-        <div class="setup-item"><i class="fas fa-headphones"></i> Redragon Lamia V2</div>
+      <div class="items">
+        <div class="item"><i class="fas fa-microchip"></i><span>i5-9400F</span></div>
+        <div class="item"><i class="fas fa-video"></i><span>RTX 3050</span></div>
+        <div class="item"><i class="fas fa-memory"></i><span>16GB RAM</span></div>
+        <div class="item"><i class="fas fa-keyboard"></i><span>Razer DeathStalker V2 Pro</span></div>
+        <div class="item"><i class="fas fa-mouse"></i><span>Razer Basilisk V3 Pro</span></div>
+        <div class="item"><i class="fas fa-headphones"></i><span>Redragon Lamia V2</span></div>
       </div>
     </div>
   </div>
 
+  <div class="bubble"></div>
+
   <script>
-    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+    VanillaTilt.init(document.querySelectorAll(".card"), {
       max: 25,
       speed: 400,
       glare: true,
-      "max-glare": 0.4,
+      "max-glare": 0.4
     });
   </script>
 </body>
