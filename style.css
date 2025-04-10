@@ -5,6 +5,35 @@ body {
   background-size: cover;
 }
 
+/* 🎈 Bolha animada */
+.bubble {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent 70%);
+  border-radius: 50%;
+  backdrop-filter: blur(80px);
+  filter: blur(40px);
+  transform: translate(-50%, -50%);
+  animation: float 10s ease-in-out infinite;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+  50% {
+    transform: translate(-50%, -50%) translateY(-20px);
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(0px);
+  }
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -12,6 +41,8 @@ body {
   align-items: flex-start;
   padding: 50px;
   gap: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .profile {
