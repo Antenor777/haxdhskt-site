@@ -1,179 +1,160 @@
-/* Fundo geral com imagem */
-body {
+* {
   margin: 0;
   padding: 0;
-  background: url('https://i.pinimg.com/736x/c8/46/da/c846da2a89884e1d639f8ba110444409.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
-/* Animação de bolhas */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url("https://i.pinimg.com/736x/c8/46/da/c846da2a89884e1d639f8ba110444409.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  z-index: 1;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  text-align: center;
+}
+
+.profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  margin-bottom: 1rem;
+  border: 2px solid white;
+}
+
+.profile h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.profile .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile .social-icons a {
+  color: white;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.profile .social-icons a:hover {
+  color: #aaa;
+}
+
+.profile button {
+  background: white;
+  color: black;
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.profile button:hover {
+  background: #ccc;
+}
+
+.config h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.config-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  text-align: left;
+}
+
+.config-item {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Bolhas animadas */
 .bubbles {
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: absolute;
   width: 100%;
   height: 100%;
-  z-index: 0;
   overflow: hidden;
+  z-index: 0;
 }
 
 .bubbles span {
   position: absolute;
   display: block;
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.1);
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  animation: rise 20s infinite ease-in;
+  bottom: -100px;
   border-radius: 50%;
-  filter: blur(4px);
-  animation: float 20s linear infinite;
 }
 
 .bubbles span:nth-child(1) { left: 10%; animation-delay: 0s; }
-.bubbles span:nth-child(2) { left: 20%; animation-delay: 2s; width: 60px; height: 60px; }
-.bubbles span:nth-child(3) { left: 25%; animation-delay: 4s; }
-.bubbles span:nth-child(4) { left: 40%; animation-delay: 0s; width: 80px; height: 80px; }
-.bubbles span:nth-child(5) { left: 70%; animation-delay: 3s; }
-.bubbles span:nth-child(6) { left: 80%; animation-delay: 7s; width: 60px; height: 60px; }
+.bubbles span:nth-child(2) { left: 20%; animation-delay: 2s; }
+.bubbles span:nth-child(3) { left: 30%; animation-delay: 4s; }
+.bubbles span:nth-child(4) { left: 50%; animation-delay: 6s; }
+.bubbles span:nth-child(5) { left: 70%; animation-delay: 8s; }
+.bubbles span:nth-child(6) { left: 90%; animation-delay: 10s; }
 
-@keyframes float {
+@keyframes rise {
   0% {
-    top: 100%;
-    transform: translateX(0) rotate(0deg);
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
   100% {
-    top: -10%;
-    transform: translateX(20px) rotate(360deg);
+    transform: translateY(-1000px) scale(0.5);
+    opacity: 0;
   }
 }
 
-/* Container principal */
-.container {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
-  height: 100vh;
-  padding: 20px;
-  flex-wrap: wrap;
-}
-
-/* Cartões com efeito glassmorphism */
-.card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-  border-radius: 24px;
-  padding: 30px;
-}
-
-/* Perfil */
-.profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 280px;
-  text-align: center;
-}
-
-.profile img {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  margin-bottom: 12px;
-  object-fit: cover;
-}
-
-.profile h2 {
-  font-size: 1.5rem;
-  margin: 0 0 12px;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  margin-bottom: 15px;
-}
-
-.social-icons a {
-  color: white;
-  font-size: 22px;
-  transition: 0.3s;
-}
-
-.social-icons a:hover {
-  transform: scale(1.3);
-}
-
-.profile button {
-  background-color: white;
-  color: black;
-  border: none;
-  padding: 8px 18px;
-  border-radius: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-top: 12px;
-}
-
-.profile button:hover {
-  background-color: #eee;
-}
-
-/* Configuração */
-.config {
-  width: 420px;
-}
-
-.config h3 {
-  text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 24px;
-}
-
-.config-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-
-.config-item {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 20px;
-  text-align: center;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.config-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.config-item i {
-  font-size: 26px;
-  display: block;
-  margin-bottom: 8px;
-}
-
-/* Responsividade */
+/* Responsivo */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
-    height: auto;
-    padding: 40px 20px;
+    align-items: center;
   }
 
-  .profile, .config {
-    width: 100%;
-    max-width: 360px;
+  .card {
+    width: 90%;
+  }
+
+  .config-grid {
+    grid-template-columns: 1fr;
   }
 }
