@@ -1,131 +1,149 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
+/* Fundo geral com imagem escura */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #0a0a0a;
-  background-image: url('https://i.pinimg.com/736x/c8/46/da/c846da2a89884e1d639f8ba110444409.jpg');
+  background: url('https://i.pinimg.com/736x/c8/46/da/c846da2a89884e1d639f8ba110444409.jpg') no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.container {
-  display: flex;
-  gap: 40px;
-  background: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(15px);
-  border-radius: 30px;
-  padding: 40px;
-  box-shadow: 0 0 30px rgba(0,0,0,0.6);
-}
-
-.card {
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 20px;
-  padding: 30px;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(0,0,0,0.4);
-}
-
-.profile img {
-  width: 100px;
-  height: 100px;
-  border-radius: 100px;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-
-.username {
   color: white;
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.socials a {
-  color: white;
-  font-size: 20px;
-  transition: 0.3s;
-}
-
-.socials a:hover {
-  color: #00aaff;
-}
-
-button {
-  background-color: white;
-  color: black;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 999px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-button:hover {
-  background-color: #e0e0e0;
-}
-
-.config-card {
+/* Bolhas com blur */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 20px;
+  z-index: 0;
+}
+
+.bubble1 {
+  width: 200px;
+  height: 200px;
+  top: -50px;
+  left: -50px;
+}
+
+.bubble2 {
+  width: 300px;
+  height: 300px;
+  bottom: -100px;
+  right: -100px;
+}
+
+/* Container principal (perfil + config lado a lado) */
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  min-height: 100vh;
+  padding: 40px;
+  z-index: 1;
+}
+
+/* Cards de vidro (efeito glassmorphism) */
+.card {
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  border-radius: 24px;
   padding: 30px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  width: fit-content;
-  max-width: 500px;
-  color: white;
+  z-index: 1;
 }
 
-.config-card h2 {
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: white;
-  text-align: center;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-.config-item {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 15px;
-  text-align: center;
+/* Card do perfil */
+.profile {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 280px;
+  text-align: center;
+}
+
+.profile img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.profile h2 {
+  font-size: 1.6rem;
+  margin: 0 0 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #ccc;
+}
+
+.profile button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.profile button:hover {
+  background-color: #eee;
+}
+
+/* Card de configuração */
+.config {
+  width: 440px;
+  max-width: 90vw;
+}
+
+.config h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+}
+
+.config-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.config-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  font-weight: 500;
   transition: 0.3s;
 }
 
 .config-item:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
 }
 
+/* Ícones maiores */
 .config-item i {
-  font-size: 24px;
-  margin-bottom: 8px;
-  color: white;
-}
-
-.config-item span {
-  font-size: 14px;
-  color: white;
+  font-size: 28px;
+  display: block;
+  margin-bottom: 10px;
 }
