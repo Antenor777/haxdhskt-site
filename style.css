@@ -1,45 +1,65 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
   background: url('https://i.pinimg.com/736x/c8/46/da/c846da2a89884e1d639f8ba110444409.jpg') no-repeat center center fixed;
   background-size: cover;
-  color: white;
-  font-family: 'Poppins', sans-serif;
   overflow: hidden;
+  color: white;
 }
 
-/* Bolhas com blur */
-.bubble {
+/* Bolhas animadas */
+.circles {
   position: absolute;
-  width: 240px;
-  height: 240px;
-  background: rgba(255, 255, 255, 0.07);
-  filter: blur(80px);
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   z-index: 0;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
 }
-
-.bubble1 {
-  top: -60px;
-  left: -60px;
+.circles li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  animation: float 25s linear infinite;
+  bottom: -150px;
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
 }
-
-.bubble2 {
-  bottom: -60px;
-  right: -60px;
+@keyframes float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-1000px) rotate(720deg); }
 }
+.circles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-duration: 22s; }
+.circles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-duration: 18s; }
+.circles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-duration: 25s; }
+.circles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-duration: 20s; }
+.circles li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-duration: 17s; }
+.circles li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-duration: 26s; }
+.circles li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-duration: 29s; }
+.circles li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-duration: 20s; }
+.circles li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-duration: 16s; }
+.circles li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-duration: 30s; }
 
+/* Layout principal */
 .container {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 60px;
-  height: 100vh;
   padding: 20px;
-  position: relative;
-  z-index: 1;
 }
 
+/* Cartões (glassmorphism) */
 .card {
   background: rgba(0, 0, 0, 0.35);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -49,6 +69,7 @@ body {
   padding: 30px;
 }
 
+/* Cartão de perfil */
 .profile {
   display: flex;
   flex-direction: column;
@@ -101,6 +122,7 @@ body {
   background-color: #eee;
 }
 
+/* Cartão de configuração */
 .config {
   width: 420px;
 }
