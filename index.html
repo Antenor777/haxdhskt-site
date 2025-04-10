@@ -1,72 +1,180 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>haxdhskt</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  
+  <!-- Font Awesome e Tilt -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+
+  <!-- Favicon e Estilo -->
+  <link rel="icon" href="assets/imagens/logo.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <!-- Bolha animada no fundo -->
+  <!-- Bolha azul neon -->
   <div class="bubble"></div>
 
-  <!-- Container principal -->
-  <div class="container">
-    <!-- Perfil -->
-    <div class="profile">
-      <img src="https://i.pinimg.com/736x/9c/ad/ba/9cadbad08a172bed4b3b1199ec478432.jpg" alt="Profile" class="profile-pic">
-      <h1>haxdhskt</h1>
-      <div class="socials">
-        <a href="https://discord.gg/zPWNEAsZK9" target="_blank"><i class="fab fa-discord"></i></a>
-        <a href="https://youtube.com/@diabolicboyff?si=RpFjVZlU4GZhOI3Z" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/diabolicboy_?igsh=ajVpM3Y0cWxmbm5w" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@diabolicboy_?_t=ZM-8vPpH0O8z4Q&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+  <!-- Tela de introdução -->
+  <div id="intro-screen">
+    <h1>erstellt von haxdhskt</h1>
+    <p>Clique em qualquer lugar para continuar</p>
+  </div>
+
+  <div class="container" style="display: none;">
+    <!-- Controle de Música -->
+    <div class="music-control">
+      <button id="muteBtn" title="Mutar/Desmutar">
+        <i class="fas fa-volume-up"></i>
+      </button>
+      <div class="volume-control">
+        <i class="fas fa-volume-down"></i>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.3" title="Controlar volume">
+        <i class="fas fa-volume-up"></i>
       </div>
     </div>
 
-    <!-- Setup -->
-    <div class="setup">
-      <h2>Setup</h2>
-      <div class="setup-grid">
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front"><i class="fas fa-microchip"></i><span>Processador</span></div>
-            <div class="flip-card-back">Intel i5-9400F</div>
+    <!-- CARD DE PERFIL -->
+    <div class="card card1">
+      <h2><i class="fas fa-check-circle verified-badge"></i> haxdhskt</h2>
+      <img src="assets/imagens/profile1.gif" alt="" class="produto"/>
+
+      <div class="social-buttons">
+        <a href="https://www.instagram.com/diabolicboy_" class="social-btn instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@diabolicboyff" class="social-btn youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@diabolicboy_" class="social-btn twitch" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://discord.gg/zPWNEAsZK9" class="social-btn discord" target="_blank"><i class="fab fa-discord"></i></a>
+      </div>
+
+      <button onclick="abrirModal()">Info</button>
+    </div>
+
+    <!-- CARD DE CONFIG -->
+    <div class="card card2">
+      <h2>Config</h2>
+      <div class="peripherals-container">
+        <!-- CPU -->
+        <div class="peripheral-item">
+          <div class="peripheral-item-inner">
+            <div class="peripheral-item-front">
+              <div class="peripheral-icon"><img src="assets/imagens/cpu.png" alt="CPU"></div>
+              <div class="peripheral-text">CPU</div>
+            </div>
+            <div class="peripheral-item-back"><p>i5-9400F</p></div>
           </div>
         </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front"><i class="fas fa-video"></i><span>Placa de Vídeo</span></div>
-            <div class="flip-card-back">RTX 3050</div>
+        <!-- GPU -->
+        <div class="peripheral-item">
+          <div class="peripheral-item-inner">
+            <div class="peripheral-item-front">
+              <div class="peripheral-icon"><img src="assets/imagens/placa-de-video.png" alt="GPU"></div>
+              <div class="peripheral-text">GPU</div>
+            </div>
+            <div class="peripheral-item-back"><p>RTX 3050</p></div>
           </div>
         </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front"><i class="fas fa-memory"></i><span>Memória RAM</span></div>
-            <div class="flip-card-back">16GB</div>
+        <!-- RAM -->
+        <div class="peripheral-item">
+          <div class="peripheral-item-inner">
+            <div class="peripheral-item-front">
+              <div class="peripheral-icon"><img src="assets/imagens/ram.png" alt="RAM"></div>
+              <div class="peripheral-text">RAM</div>
+            </div>
+            <div class="peripheral-item-back"><p>16GB RAM</p></div>
           </div>
         </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front"><i class="fas fa-keyboard"></i><span>Teclado</span></div>
-            <div class="flip-card-back">Razer DeathStalker V2 Pro</div>
+        <!-- Teclado -->
+        <div class="peripheral-item">
+          <div class="peripheral-item-inner">
+            <div class="peripheral-item-front">
+              <div class="peripheral-icon"><img src="assets/imagens/teclado.png" alt="Teclado"></div>
+              <div class="peripheral-text">Teclado</div>
+            </div>
+            <div class="peripheral-item-back"><p>Razer DeathStalker V2 Pro</p></div>
           </div>
         </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front"><i class="fas fa-mouse"></i><span>Mouse</span></div>
-            <div class="flip-card-back">Razer Basilisk V3 Pro</div>
+        <!-- Mouse -->
+        <div class="peripheral-item">
+          <div class="peripheral-item-inner">
+            <div class="peripheral-item-front">
+              <div class="peripheral-icon"><img src="assets/imagens/mouse.png" alt="Mouse"></div>
+              <div class="peripheral-text">Mouse</div>
+            </div>
+            <div class="peripheral-item-back"><p>Razer Basilisk V3 Pro</p></div>
           </div>
         </div>
-        <div class="flip-card">
-          <div class="flip-card-inner">
-            <div class="flip-card-front"><i class="fas fa-headphones"></i><span>Headset</span></div>
-            <div class="flip-card-back">Redragon Lamia V2</div>
+        <!-- Headset -->
+        <div class="peripheral-item">
+          <div class="peripheral-item-inner">
+            <div class="peripheral-item-front">
+              <div class="peripheral-icon"><img src="assets/imagens/headset.png" alt="Headset"></div>
+              <div class="peripheral-text">Headset</div>
+            </div>
+            <div class="peripheral-item-back"><p>Redragon Lamia V2</p></div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Modal -->
+  <div class="janela-modal" id="janela-modal">
+    <div class="modal">
+      <button class="fechar" id="fechar">X</button>
+      <h1>Sobre mim</h1>
+      <p>Este é um projeto inspirado em Konect.gg com visual futurista baseado em glassmorphism.</p>
+    </div>
+  </div>
+
+  <!-- Música de fundo -->
+  <audio id="bgMusic" loop autoplay>
+    <source src="assets/musica/musicrztime.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Scripts -->
+  <script>
+    document.getElementById('intro-screen').addEventListener('click', function () {
+      this.style.display = 'none';
+      document.querySelector('.container').style.display = 'flex';
+    });
+
+    VanillaTilt.init(document.querySelectorAll(".card"), {
+      max: 25,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.5,
+    });
+
+    // Modal
+    function abrirModal() {
+      document.getElementById('janela-modal').style.display = 'flex';
+    }
+    function fecharModal() {
+      document.getElementById('janela-modal').style.display = 'none';
+    }
+    document.getElementById('fechar').addEventListener('click', fecharModal);
+    document.getElementById('janela-modal').addEventListener('click', function (e) {
+      if (e.target === this) fecharModal();
+    });
+
+    // Música
+    const music = document.getElementById("bgMusic");
+    const muteBtn = document.getElementById("muteBtn");
+    const volumeSlider = document.getElementById("volumeSlider");
+
+    muteBtn.addEventListener("click", () => {
+      music.muted = !music.muted;
+      muteBtn.innerHTML = `<i class="fas ${music.muted ? 'fa-volume-mute' : 'fa-volume-up'}"></i>`;
+    });
+
+    volumeSlider.addEventListener("input", () => {
+      music.volume = volumeSlider.value;
+    });
+
+    music.volume = volumeSlider.value;
+    music.play();
+  </script>
 </body>
 </html>
