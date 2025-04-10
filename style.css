@@ -1,114 +1,70 @@
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Outfit', sans-serif;
-}
-
-body {
-  background: #0e0e0e url('https://i.pinimg.com/736x/c8/46/da/c846da2a89884e1d639f8ba110444409.jpg') no-repeat center center/cover;
-  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: url('https://i.pinimg.com/736x/c8/46/da/c846da2a89884e1d639f8ba110444409.jpg') no-repeat center center fixed;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  overflow: hidden;
-  color: white;
+  height: 100vh;
 }
 
 .container {
   display: flex;
-  gap: 2rem;
-  z-index: 2;
-  padding: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  gap: 20px;
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 2rem;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  color: white;
 }
 
-.profile-card {
+.profile {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 280px;
   text-align: center;
 }
 
 .avatar {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
 }
 
-.profile-card h2 {
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.socials {
+.social-icons {
   display: flex;
-  gap: 1rem;
-  margin: 1rem 0;
+  gap: 10px;
+  margin: 10px 0;
 }
 
-.socials a {
+.social-icons a {
   color: white;
-  font-size: 1.2rem;
-  transition: 0.3s;
+  font-size: 1.5em;
 }
 
-.socials a:hover {
-  color: #999;
-}
-
-.profile-card button {
-  padding: 0.5rem 1.2rem;
-  border: none;
-  background: white;
+button {
+  background-color: white;
   color: black;
-  border-radius: 8px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
   cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
 }
 
-.profile-card button:hover {
-  background: #ccc;
+.setup ul {
+  list-style: none;
+  padding: 0;
 }
 
-.setup-card {
-  max-width: 400px;
-}
-
-.setup-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-.setup-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.setup-grid div {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 0.8rem 1rem;
-  border-radius: 12px;
+.setup li {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 0.95rem;
-  font-weight: 500;
+  gap: 10px;
+  margin: 5px 0;
 }
