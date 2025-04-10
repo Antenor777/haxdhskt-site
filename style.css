@@ -1,117 +1,194 @@
-/* Reset e fonte */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+/* Importação da fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Outfit', sans-serif;
 }
 
 body {
+  font-family: 'Poppins', sans-serif;
   background: url('https://i.pinimg.com/736x/c8/46/da/c846da2a89884e1d639f8ba110444409.jpg') no-repeat center center fixed;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   color: white;
+  overflow-x: hidden;
 }
 
 .container {
   display: flex;
-  gap: 40px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 40px;
-  border-radius: 20px;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 50px;
+  padding: 20px;
 }
 
 .card {
   background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 24px;
   padding: 30px;
-  border-radius: 20px;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  transition: all 0.3s ease-in-out;
+}
+
+.profile {
   width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
 .profile img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 100%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
+.profile h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
   margin-bottom: 20px;
 }
 
-.profile h1 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
+.social-icons a {
+  color: white;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #ddd;
 }
 
 .profile button {
   margin-top: 10px;
-  background: white;
-  color: black;
+  padding: 8px 16px;
   border: none;
-  padding: 10px 20px;
-  border-radius: 999px;
-  font-weight: 600;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .profile button:hover {
-  transform: scale(1.05);
-  background: #e2e2e2;
+  background-color: #f0f0f0;
 }
 
-.setup {
+.config {
+  width: 420px;
+}
+
+.config h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+}
+
+.config-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  text-align: left;
+  gap: 20px;
 }
 
-.setup h2 {
-  grid-column: span 2;
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
+.config-item {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 20px;
   text-align: center;
+  transition: background 0.3s ease;
 }
 
-.item {
+.config-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.config-item i {
+  font-size: 24px;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Bolhas com blur animadas */
+.bubbles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
   background: rgba(255, 255, 255, 0.08);
-  padding: 12px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  font-weight: 500;
-  box-shadow: inset 0 0 5px rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  animation: float 20s infinite ease-in-out;
 }
 
-.item i {
-  font-size: 20px;
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
 }
 
-.socials {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
+.bubble:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  left: 10%;
+  bottom: -100px;
+  animation-delay: 0s;
 }
 
-.socials a {
-  color: white;
-  font-size: 18px;
-  transition: transform 0.2s;
+.bubble:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  left: 30%;
+  bottom: -150px;
+  animation-delay: 2s;
 }
 
-.socials a:hover {
-  transform: scale(1.2);
+.bubble:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  bottom: -200px;
+  animation-delay: 4s;
+}
+
+.bubble:nth-child(4) {
+  width: 70px;
+  height: 70px;
+  left: 70%;
+  bottom: -120px;
+  animation-delay: 6s;
+}
+
+.bubble:nth-child(5) {
+  width: 90px;
+  height: 90px;
+  left: 90%;
+  bottom: -180px;
+  animation-delay: 8s;
 }
