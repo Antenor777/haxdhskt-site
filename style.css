@@ -11,14 +11,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 7rem;
   height: 100vh;
   padding: 1rem;
   backdrop-filter: blur(4px);
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.profile-card, .config-card {
+.profile-card,
+.config-card {
   background: rgba(0, 0, 0, 0.6);
   border-radius: 20px;
   padding: 2rem;
@@ -35,19 +36,8 @@ body {
   margin-bottom: 1rem;
 }
 
-.social-icons {
-  margin: 1rem 0;
-}
-
-.social-icons a {
-  color: white;
-  margin: 0 0.3rem;
-  font-size: 1.3rem;
-  transition: color 0.3s;
-}
-
-.social-icons a:hover {
-  color: #00aaff;
+h2 {
+  margin: 0 0 1rem 0;
 }
 
 .info-btn {
@@ -65,21 +55,17 @@ body {
   background-color: #ccc;
 }
 
-.config-card h2 {
-  margin-bottom: 1rem;
-}
-
 .config-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .config-item {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 0.5rem;
+  justify-content: center;
   background: rgba(255, 255, 255, 0.1);
   padding: 0.8rem;
   border-radius: 10px;
