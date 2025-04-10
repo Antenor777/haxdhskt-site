@@ -1,25 +1,8 @@
-/* style.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-
 body {
   margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
-  background: #000;
-  color: white;
-  overflow-x: hidden;
-}
-
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: url('https://i.pinimg.com/736x/c8/46/da/c846da2a89884e1d639f8ba110444409.jpg') center center / cover no-repeat;
-  z-index: -1;
-  filter: blur(6px) brightness(0.5);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('https://i.pinimg.com/736x/c8/46/da/c846da2a89884e1d639f8ba110444409.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
 .container {
@@ -27,123 +10,103 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
+  padding: 50px;
   gap: 40px;
-  padding: 40px;
-  flex-wrap: wrap;
 }
 
-.profile-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 30px;
-  border-radius: 20px;
-  max-width: 340px;
-  width: 100%;
-  text-align: center;
-  backdrop-filter: blur(12px);
+.profile {
   background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  max-width: 300px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease;
 }
 
-.profile-img {
+.profile-pic {
   width: 100%;
-  max-height: 340px;
-  object-fit: cover;
   border-radius: 20px;
 }
 
-.username {
-  margin: 15px 0 5px;
-  font-size: 1.6rem;
+.profile h1 {
+  color: white;
+  margin: 10px 0;
+  font-size: 22px;
 }
 
 .socials a {
+  color: #888;
   margin: 0 5px;
-  color: #ccc;
-  font-size: 1.2rem;
-  transition: 0.3s;
+  font-size: 20px;
+  transition: color 0.3s, transform 0.3s;
 }
 
 .socials a:hover {
   color: white;
+  transform: scale(1.2);
 }
 
-.setup-section {
-  flex: 1;
-  max-width: 700px;
-  width: 100%;
+.setup {
+  flex-grow: 1;
+  max-width: 800px;
 }
 
-.setup-title {
-  font-size: 1.8rem;
+.setup h2 {
+  color: white;
   margin-bottom: 20px;
-  text-align: center;
+  font-size: 24px;
 }
 
 .setup-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
-  justify-items: center;
 }
 
-.card {
-  width: 100%;
-  aspect-ratio: 1 / 1;
+.flip-card {
+  background-color: transparent;
   perspective: 1000px;
 }
 
-.card-inner {
+.flip-card-inner {
   position: relative;
   width: 100%;
-  height: 100%;
+  height: 180px;
+  text-align: center;
+  transition: transform 0.6s;
   transform-style: preserve-3d;
-  transition: transform 0.8s;
 }
 
-.card:hover .card-inner {
+.flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-.card-front, .card-back {
+.flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   border-radius: 20px;
-  backface-visibility: hidden;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
-  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-.card-front i {
-  font-size: 2rem;
-  margin-bottom: 10px;
+.flip-card-front i {
+  font-size: 28px;
+  margin-bottom: 8px;
 }
 
-.card-back {
+.flip-card-back {
   transform: rotateY(180deg);
-}
-
-.glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  border-radius: 20px;
-}
-
-@media screen and (max-width: 1000px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .setup-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
 }
