@@ -1,52 +1,49 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>haxdhskt</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-  <div class="bubbles">
-    <div class="bubble" style="top: 10%; left: 20%;"></div>
-    <div class="bubble" style="top: 40%; left: 70%;"></div>
-    <div class="bubble" style="top: 80%; left: 30%;"></div>
-  </div>
-
-  <div class="container">
-    <!-- Perfil -->
-    <div class="card profile">
-      <img src="https://i.pinimg.com/736x/9c/ad/ba/9cadbad08a172bed4b3b1199ec478432.jpg" alt="Foto de perfil" />
-      <h2>@haxdhskt</h2>
-      
+  <div class="main-container">
+    <div class="profile-section">
+      <div class="profile-container" onclick="toggleFlip()">
+        <div class="profile-card">
+          <div class="profile-front">
+            <img src="https://i.pinimg.com/736x/9c/ad/ba/9cadbad08a172bed4b3b1199ec478432.jpg" alt="Profile" />
+          </div>
+          <div class="profile-back">
+            <div>
+              <p><strong>CPU:</strong> i5-9400F</p>
+              <p><strong>GPU:</strong> RTX 3050</p>
+              <p><strong>RAM:</strong> 16GB</p>
+              <p><strong>Teclado:</strong> Razer DeathStalker V2 Pro</p>
+              <p><strong>Mouse:</strong> Razer Basilisk V3 Pro</p>
+              <p><strong>Headset:</strong> Redragon Lamia V2</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h1>@haxdhskt</h1>
       <div class="social-icons">
         <a href="https://discord.gg/zPWNEAsZK9" target="_blank"><i class="fab fa-discord"></i></a>
         <a href="https://youtube.com/@diabolicboyff?si=RpFjVZlU4GZhOI3Z" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/diabolicboy_?igsh=ajVpM3Y0cWxmbm5w&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@diabolicboy_?_t=ZM-8vPpH0O8z4Q&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
-      </div>
-
-      <button>Seguir</button>
-    </div>
-
-    <!-- Configuração do PC -->
-    <div class="card config">
-      <h3>Config</h3>
-      <div class="config-grid">
-        <div class="config-item"><i class="fas fa-microchip"></i> i5-9400F</div>
-        <div class="config-item"><i class="fas fa-video"></i> RTX 3050</div>
-        <div class="config-item"><i class="fas fa-memory"></i> 16GB RAM</div>
-        <div class="config-item"><i class="fas fa-keyboard"></i> Razer DeathStalker V2 Pro</div>
-        <div class="config-item"><i class="fas fa-mouse"></i> Razer Basilisk V3 Pro</div>
-        <div class="config-item"><i class="fas fa-headphones"></i> Redragon Lamia V2</div>
+        <a href="https://www.instagram.com/diabolicboy_" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@diabolicboy_" target="_blank"><i class="fab fa-tiktok"></i></a>
       </div>
     </div>
   </div>
 
+  <script>
+    function toggleFlip() {
+      document.querySelector(".profile-container").classList.toggle("flipped");
+    }
+  </script>
 </body>
 </html>
