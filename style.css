@@ -1,107 +1,98 @@
+/* style.css */
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: url('https://i.pinimg.com/736x/c8/46/da/c846da2a89884e1d639f8ba110444409.jpg') no-repeat center center fixed;
   background-size: cover;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
+  color: white;
 }
 
 .container {
   display: flex;
-  gap: 4rem;
+  gap: 40px;
+  backdrop-filter: blur(10px);
   z-index: 2;
 }
 
 .glass {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-  border-radius: 20px;
-  padding: 2rem;
-  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-card, .setup-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
 }
 
-.profile-img {
+.profile-pic {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  border: 2px solid white;
+  margin-bottom: 15px;
 }
 
-h1 {
-  font-size: 1.5rem;
-  margin: 0.5rem 0;
-}
-
-button {
-  padding: 0.5rem 1rem;
-  border: none;
-  background: white;
-  color: black;
-  font-weight: bold;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background 0.3s;
-  margin-top: 1rem;
-}
-
-button:hover {
-  background: #ddd;
+h2, h3 {
+  margin: 10px 0;
 }
 
 .social-icons {
   display: flex;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
-  font-size: 1.25rem;
+  gap: 15px;
+  margin: 10px 0;
 }
 
-.social-icons a {
+.social-icons i {
+  font-size: 20px;
   color: white;
-  transition: color 0.3s;
+  transition: transform 0.2s, color 0.2s;
 }
 
-.social-icons a:hover {
-  color: #ff00c8;
+.social-icons i:hover {
+  transform: scale(1.2);
+  color: #ccc;
 }
 
-.setup-card h2 {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 1rem;
-}
-
-.item {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 10px;
+.follow-btn {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
   font-weight: bold;
-  text-align: center;
-  color: white;
-  min-width: 120px;
-  transition: transform 0.3s;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-.item:hover {
-  transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.2);
+.follow-btn:hover {
+  background-color: #ccc;
+}
+
+.setup-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.setup-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
 }
