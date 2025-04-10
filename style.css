@@ -1,98 +1,114 @@
-/* style.css */
-body {
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url('https://i.pinimg.com/736x/c8/46/da/c846da2a89884e1d639f8ba110444409.jpg') no-repeat center center fixed;
-  background-size: cover;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background: #0e0e0e url('https://i.pinimg.com/736x/c8/46/da/c846da2a89884e1d639f8ba110444409.jpg') no-repeat center center/cover;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  position: relative;
+  overflow: hidden;
   color: white;
 }
 
 .container {
   display: flex;
-  gap: 40px;
-  backdrop-filter: blur(10px);
+  gap: 2rem;
   z-index: 2;
+  padding: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .glass {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 2rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
 }
 
-.profile-card, .setup-card {
+.profile-card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 280px;
+  text-align: center;
 }
 
-.profile-pic {
-  width: 100px;
-  height: 100px;
+.avatar {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  margin-bottom: 15px;
+  object-fit: cover;
+  margin-bottom: 1rem;
 }
 
-h2, h3 {
-  margin: 10px 0;
+.profile-card h2 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
-.social-icons {
+.socials {
   display: flex;
-  gap: 15px;
-  margin: 10px 0;
+  gap: 1rem;
+  margin: 1rem 0;
 }
 
-.social-icons i {
-  font-size: 20px;
+.socials a {
   color: white;
-  transition: transform 0.2s, color 0.2s;
+  font-size: 1.2rem;
+  transition: 0.3s;
 }
 
-.social-icons i:hover {
-  transform: scale(1.2);
-  color: #ccc;
+.socials a:hover {
+  color: #999;
 }
 
-.follow-btn {
-  background-color: white;
-  color: black;
+.profile-card button {
+  padding: 0.5rem 1.2rem;
   border: none;
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-weight: bold;
+  background: white;
+  color: black;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-.follow-btn:hover {
-  background-color: #ccc;
+.profile-card button:hover {
+  background: #ccc;
+}
+
+.setup-card {
+  max-width: 400px;
+}
+
+.setup-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .setup-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin-top: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
-.setup-item {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 10px;
-  border-radius: 10px;
+.setup-grid div {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 14px;
+  gap: 0.5rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  white-space: nowrap;
 }
