@@ -8,70 +8,59 @@ body {
   background: #0f0f0f;
   color: white;
   font-family: 'Inter', sans-serif;
-  min-height: 100vh;
-  padding: 40px 20px;
-}
-
-.main-layout {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 40px;
+  overflow-x: hidden;
 }
 
-/* Estilo em colunas no desktop */
-@media (min-width: 768px) {
-  .main-layout {
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-  }
+.layout {
+  display: flex;
+  gap: 80px;
+  padding: 40px;
+  width: 100%;
+  max-width: 1300px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .column {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #1a1a1a;
-  padding: 20px;
-  border-radius: 16px;
-  border: 2px solid #2e2e2e;
-  width: 100%;
-  max-width: 320px;
+  min-width: 280px;
+  flex: 1;
+  max-width: 300px;
 }
 
-/* Foto e nome */
-.profile-pic {
-  width: 120px;
-  height: 120px;
+.profile img {
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  object-fit: cover;
   border: 3px solid #00ffc3;
+  object-fit: cover;
   margin-bottom: 20px;
 }
 
-h1 {
-  font-size: 24px;
+.profile h1 {
+  font-size: 22px;
   color: #00ffc3;
 }
 
-/* Links */
-.links {
-  gap: 15px;
-}
-
 .links a {
-  display: block;
-  text-decoration: none;
-  background: #1f1f1f;
-  color: white;
+  background: transparent;
   border: 2px solid #00ffc3;
-  border-radius: 12px;
   padding: 12px;
-  margin-bottom: 12px;
+  margin: 8px 0;
+  text-decoration: none;
+  color: white;
   text-align: center;
-  transition: 0.3s;
+  width: 100%;
+  border-radius: 10px;
   font-weight: 600;
+  transition: 0.3s;
 }
 
 .links a:hover {
@@ -79,19 +68,31 @@ h1 {
   color: black;
 }
 
-/* Setup */
-.specs h2 {
+.setup h2 {
   color: #00ffc3;
-  font-size: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 
-.spec-box {
-  background: #111;
-  padding: 10px 15px;
-  border-radius: 10px;
-  margin-bottom: 10px;
+.setup p {
+  margin: 6px 0;
   font-size: 14px;
-  border: 1px solid #2e2e2e;
-  text-align: left;
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  body {
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .layout {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .column {
+    max-width: none;
+    width: 100%;
+  }
