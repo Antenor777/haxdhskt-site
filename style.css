@@ -11,6 +11,7 @@ body {
   background: url('https://wallpapers-clan.com/wp-content/uploads/2025/04/mimikyu-shy-forest-hide-pokemon-laptop-wallpaper-preview.jpg') no-repeat center center fixed;
   background-size: cover;
   overflow-x: hidden;
+  color: white;
 }
 
 .container {
@@ -33,6 +34,7 @@ body {
   width: 300px;
   color: white;
   transition: transform 0.3s ease;
+  transform-style: preserve-3d;
 }
 
 .card h2 {
@@ -45,6 +47,7 @@ body {
   width: 100%;
   border-radius: 20px;
   margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 .verified-badge {
@@ -79,8 +82,15 @@ button {
   border-radius: 10px;
   cursor: pointer;
   width: 100%;
+  font-weight: 600;
+  transition: background 0.3s ease;
 }
 
+button:hover {
+  background-color: #347edc;
+}
+
+/* PERIPHERALS SECTION */
 .peripherals-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -103,7 +113,8 @@ button {
   transform: rotateY(180deg);
 }
 
-.peripheral-item-front, .peripheral-item-back {
+.peripheral-item-front,
+.peripheral-item-back {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -116,30 +127,27 @@ button {
   justify-content: center;
   color: white;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.peripheral-item-front {
-  z-index: 2;
-}
-
-.peripheral-item-back {
-  transform: rotateY(180deg);
-  padding: 10px;
-  text-align: center;
-  font-size: 14px;
-}
-
-.peripheral-icon img {
+.peripheral-item-front img {
   width: 40px;
   margin-bottom: 10px;
 }
 
-.peripheral-text {
+.peripheral-item-front span {
   font-weight: 600;
   font-size: 16px;
 }
 
-/* Modal */
+.peripheral-item-back {
+  transform: rotateY(180deg);
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+}
+
+/* MODAL */
 .janela-modal {
   display: none;
   position: fixed;
@@ -154,29 +162,36 @@ button {
 }
 
 .modal {
-  background-color: #111;
+  background-color: rgba(17, 17, 17, 0.95);
   padding: 30px;
-  border-radius: 10px;
+  border-radius: 15px;
   color: white;
   width: 90%;
   max-width: 500px;
+  position: relative;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .fechar {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  top: 15px;
+  right: 20px;
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 22px;
   color: white;
   cursor: pointer;
 }
 
-/* Responsivo */
+/* RESPONSIVO */
 @media screen and (max-width: 768px) {
   .container {
     flex-direction: column;
     align-items: center;
+  }
+
+  .peripherals-container {
+    grid-template-columns: 1fr;
   }
 }
