@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>haxdhskt</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://unpkg.com/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>haxdhskt</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <div class="profile" data-tilt>
-      <img src="https://i.pinimg.com/736x/9c/ad/ba/9cadbad08a172bed4b3b1199ec478432.jpg" alt="profile" class="pfp" />
-      <h1>haxdhskt</h1>
-      <div class="socials">
-        <a href="https://discord.gg/zPWNEAsZK9"><i class="fab fa-discord"></i></a>
-        <a href="https://youtube.com/@diabolicboyff?si=RpFjVZlU4GZhOI3Z"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/diabolicboy_?igsh=ajVpM3Y0cWxmbm5w&utm_source=qr"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@diabolicboy_?_t=ZM-8vPpH0O8z4Q&_r=1"><i class="fab fa-tiktok"></i></a>
-      </div>
+    <div class="container">
+        <div class="profile tilt-card">
+            <img src="https://i.pinimg.com/736x/9c/ad/ba/9cadbad08a172bed4b3b1199ec478432.jpg" alt="Profile Picture" class="profile-img">
+            <h1>haxdhskt</h1>
+            <div class="socials">
+                <a href="https://discord.gg/zPWNEAsZK9" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                <a href="https://youtube.com/@diabolicboyff?si=RpFjVZlU4GZhOI3Z" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://www.instagram.com/diabolicboy_?igsh=ajVpM3Y0cWxmbm5w" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@diabolicboy_?_t=ZM-8vPpH0O8z4Q&_r=1" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+        <div class="setup">
+            <h2>Setup</h2>
+            <div class="grid">
+                <div class="setup-item tilt-card"><img src="assets/cpu.png"><span>i5-9400F</span></div>
+                <div class="setup-item tilt-card"><img src="assets/gpu.png"><span>RTX 3050</span></div>
+                <div class="setup-item tilt-card"><img src="assets/ram.png"><span>16GB RAM</span></div>
+                <div class="setup-item tilt-card"><img src="assets/keyboard.png"><span>Razer DeathStalker V2 Pro</span></div>
+                <div class="setup-item tilt-card"><img src="assets/mouse.png"><span>Razer Basilisk V3 Pro</span></div>
+                <div class="setup-item tilt-card"><img src="assets/headset.png"><span>Redragon Lamia V2</span></div>
+            </div>
+        </div>
     </div>
-
-    <div class="setup" data-tilt>
-      <h2>Setup</h2>
-      <div class="setup-grid">
-        <div class="setup-item">
-          <img src="assets/cpu.png" alt="CPU" /><span>CPU</span>
-        </div>
-        <div class="setup-item">
-          <img src="assets/gpu.png" alt="GPU" /><span>GPU</span>
-        </div>
-        <div class="setup-item">
-          <img src="assets/ram.png" alt="RAM" /><span>RAM</span>
-        </div>
-        <div class="setup-item">
-          <img src="assets/keyboard.png" alt="Teclado" /><span>Teclado</span>
-        </div>
-        <div class="setup-item">
-          <img src="assets/mouse.png" alt="Mouse" /><span>Mouse</span>
-        </div>
-        <div class="setup-item">
-          <img src="assets/headset.png" alt="Headset" /><span>Headset</span>
-        </div>
-      </div>
-    </div>
-  </div>
+    <script src="https://kit.fontawesome.com/a2e0c6f26c.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".tilt-card"), {
+            max: 15,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.2,
+        });
+    </script>
 </body>
 </html>
