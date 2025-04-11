@@ -1,118 +1,46 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>haxdhskt</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/4a4d6afed6.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
   <div class="container">
-    <!-- Perfil -->
-    <div class="card">
-      <img src="https://i.pinimg.com/736x/9c/ad/ba/9cadbad08a172bed4b3b1199ec478432.jpg" alt="haxdhskt" class="produto" />
-      <h2><span class="verified-badge"><i class="fas fa-check-circle"></i></span>haxdhskt</h2>
-      <div class="social-buttons">
-        <a href="https://discord.gg/zPWNEAsZK9" class="social-btn" target="_blank"><i class="fab fa-discord"></i></a>
-        <a href="https://youtube.com/@diabolicboyff" class="social-btn" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/diabolicboy_" class="social-btn" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@diabolicboy_" class="social-btn" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <div class="profile" data-tilt>
+      <img src="https://i.pinimg.com/736x/9c/ad/ba/9cadbad08a172bed4b3b1199ec478432.jpg" alt="profile" class="pfp" />
+      <h1>haxdhskt</h1>
+      <div class="socials">
+        <a href="https://discord.gg/zPWNEAsZK9"><i class="fab fa-discord"></i></a>
+        <a href="https://youtube.com/@diabolicboyff?si=RpFjVZlU4GZhOI3Z"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/diabolicboy_?igsh=ajVpM3Y0cWxmbm5w&utm_source=qr"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@diabolicboy_?_t=ZM-8vPpH0O8z4Q&_r=1"><i class="fab fa-tiktok"></i></a>
       </div>
     </div>
 
-    <!-- Setup -->
-    <div class="card">
+    <div class="setup" data-tilt>
       <h2>Setup</h2>
-      <div class="peripherals-container">
-        <!-- CPU -->
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <div class="peripheral-icon">
-                <i class="fas fa-microchip fa-3x"></i>
-              </div>
-              <div class="peripheral-text">CPU</div>
-            </div>
-            <div class="peripheral-item-back">
-              i5-9400F
-            </div>
-          </div>
+      <div class="setup-grid">
+        <div class="setup-item">
+          <img src="assets/cpu.png" alt="CPU" /><span>CPU</span>
         </div>
-
-        <!-- GPU -->
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <div class="peripheral-icon">
-                <i class="fas fa-video fa-3x"></i>
-              </div>
-              <div class="peripheral-text">GPU</div>
-            </div>
-            <div class="peripheral-item-back">
-              RTX 3050
-            </div>
-          </div>
+        <div class="setup-item">
+          <img src="assets/gpu.png" alt="GPU" /><span>GPU</span>
         </div>
-
-        <!-- RAM -->
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <div class="peripheral-icon">
-                <i class="fas fa-memory fa-3x"></i>
-              </div>
-              <div class="peripheral-text">RAM</div>
-            </div>
-            <div class="peripheral-item-back">
-              16GB
-            </div>
-          </div>
+        <div class="setup-item">
+          <img src="assets/ram.png" alt="RAM" /><span>RAM</span>
         </div>
-
-        <!-- Teclado -->
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <div class="peripheral-icon">
-                <i class="fas fa-keyboard fa-3x"></i>
-              </div>
-              <div class="peripheral-text">Teclado</div>
-            </div>
-            <div class="peripheral-item-back">
-              Razer DeathStalker V2 Pro
-            </div>
-          </div>
+        <div class="setup-item">
+          <img src="assets/keyboard.png" alt="Teclado" /><span>Teclado</span>
         </div>
-
-        <!-- Mouse -->
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <div class="peripheral-icon">
-                <i class="fas fa-computer-mouse fa-3x"></i>
-              </div>
-              <div class="peripheral-text">Mouse</div>
-            </div>
-            <div class="peripheral-item-back">
-              Razer Basilisk V3 Pro
-            </div>
-          </div>
+        <div class="setup-item">
+          <img src="assets/mouse.png" alt="Mouse" /><span>Mouse</span>
         </div>
-
-        <!-- Headset -->
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <div class="peripheral-icon">
-                <i class="fas fa-headphones fa-3x"></i>
-              </div>
-              <div class="peripheral-text">Headset</div>
-            </div>
-            <div class="peripheral-item-back">
-              Redragon Lamia V2
-            </div>
-          </div>
+        <div class="setup-item">
+          <img src="assets/headset.png" alt="Headset" /><span>Headset</span>
         </div>
       </div>
     </div>
