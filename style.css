@@ -1,133 +1,93 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: url('https://wallpapers-clan.com/wp-content/uploads/2025/04/mimikyu-shy-forest-hide-pokemon-laptop-wallpaper-preview.jpg') no-repeat center center fixed;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: url('https://wallpapercave.com/wp/wp10295957.jpg') no-repeat center center fixed;
   background-size: cover;
-  overflow-x: hidden;
-  color: white;
 }
 
 .container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  gap: 60px;
+  min-height: 100vh;
   flex-wrap: wrap;
-  gap: 40px;
-  padding: 60px 20px;
 }
 
-.card {
+.profile, .setup {
   background: rgba(0, 0, 0, 0.4);
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 30px;
-  width: 300px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  text-align: center;
   transition: transform 0.3s ease;
 }
 
-.card h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.card img.produto {
-  width: 100%;
+.pfp {
+  width: 150px;
+  height: 150px;
   border-radius: 20px;
-  margin-bottom: 20px;
+  object-fit: cover;
+  margin-bottom: 15px;
 }
 
-.verified-badge {
-  color: #4fa3ff;
-  margin-right: 8px;
+.profile h1 {
+  font-size: 24px;
+  color: #fff;
+  margin: 0;
 }
 
-.social-buttons {
+.socials {
+  margin-top: 15px;
   display: flex;
   justify-content: center;
   gap: 15px;
+}
+
+.socials a {
+  color: #fff;
+  font-size: 20px;
+  transition: transform 0.2s ease;
+}
+
+.socials a:hover {
+  transform: scale(1.2);
+}
+
+.setup h2 {
+  color: #fff;
   margin-bottom: 20px;
 }
 
-.social-btn {
-  color: white;
-  font-size: 20px;
-  text-decoration: none;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.social-btn:hover {
-  transform: scale(1.2);
-  color: #4fa3ff;
-}
-
-.peripherals-container {
+.setup-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(2, 120px);
+  gap: 15px;
+  justify-content: center;
 }
 
-.peripheral-item {
-  perspective: 1000px;
-}
-
-.peripheral-item-inner {
-  position: relative;
-  width: 100%;
-  height: 120px;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.peripheral-item:hover .peripheral-item-inner {
-  transform: rotateY(180deg);
-}
-
-.peripheral-item-front,
-.peripheral-item-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+.setup-item {
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 15px;
-  backface-visibility: hidden;
+  padding: 10px;
+  color: #fff;
+  font-size: 14px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
 }
 
-.peripheral-item-back {
-  transform: rotateY(180deg);
-  padding: 10px;
-  text-align: center;
-  font-size: 14px;
+.setup-item img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
 }
 
-.peripheral-icon {
-  margin-bottom: 10px;
-}
-
-.peripheral-text {
-  font-weight: 600;
-  font-size: 16px;
-}
-
-/* Responsivo */
-@media screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
+.setup-item:hover {
+  transform: scale(1.05);
 }
