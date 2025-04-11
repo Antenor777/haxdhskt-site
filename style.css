@@ -1,93 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Inter', sans-serif;
-  background: url('https://wallpapercave.com/wp/wp10295957.jpg') no-repeat center center fixed;
-  background-size: cover;
+    background: url('https://wallpapercave.com/wp/wp10295957.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
-  min-height: 100vh;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 4rem;
+    backdrop-filter: blur(10px);
 }
 
 .profile, .setup {
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 20px;
-  padding: 30px;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
-  text-align: center;
-  transition: transform 0.3s ease;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+    text-align: center;
 }
 
-.pfp {
-  width: 150px;
-  height: 150px;
-  border-radius: 20px;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-
-.profile h1 {
-  font-size: 24px;
-  color: #fff;
-  margin: 0;
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-bottom: 1rem;
 }
 
 .socials {
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
+    margin-top: 1rem;
 }
 
 .socials a {
-  color: #fff;
-  font-size: 20px;
-  transition: transform 0.2s ease;
+    margin: 0 10px;
+    color: white;
+    font-size: 20px;
+    transition: transform 0.2s;
 }
 
 .socials a:hover {
-  transform: scale(1.2);
+    transform: scale(1.2);
 }
 
 .setup h2 {
-  color: #fff;
-  margin-bottom: 20px;
+    color: white;
+    margin-bottom: 1rem;
 }
 
-.setup-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 120px);
-  gap: 15px;
-  justify-content: center;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
 }
 
 .setup-item {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 15px;
-  padding: 10px;
-  color: #fff;
-  font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: transform 0.2s ease;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .setup-item img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 8px;
-}
-
-.setup-item:hover {
-  transform: scale(1.05);
+    width: 50px;
+    margin-bottom: 0.5rem;
 }
