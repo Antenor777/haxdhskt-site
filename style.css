@@ -1,12 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
 
 :root {
+  --bg-color: #0f0f0f;
   --neon: #00ffff;
   --white: #ffffff;
-  --bg-url: url("https://wallpapers-clan.com/wp-content/uploads/2025/04/mimikyu-shy-forest-hide-pokemon-laptop-wallpaper-preview.jpg");
-  --card-bg: rgba(255, 255, 255, 0.05);
-  --blur: blur(10px);
-  --font: "Outfit", sans-serif;
 }
 
 * {
@@ -16,89 +13,78 @@
 }
 
 body {
-  background: var(--bg-url) no-repeat center center/cover;
-  font-family: var(--font);
+  background: url("https://wallpapers-clan.com/wp-content/uploads/2025/04/mimikyu-shy-forest-hide-pokemon-laptop-wallpaper-preview.jpg") no-repeat center center/cover;
+  font-family: 'Outfit', sans-serif;
   color: var(--white);
-  height: 100vh;
+  overflow-x: hidden;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  overflow: hidden;
-}
-
-.bubble {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: var(--neon);
-  filter: blur(120px);
-  z-index: 0;
-  animation: float 10s ease-in-out infinite alternate;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-@keyframes float {
-  0% {
-    transform: translate(-50%, -50%) translateX(0);
-  }
-  100% {
-    transform: translate(-50%, -50%) translateX(100px);
-  }
+  justify-content: center;
 }
 
 .container {
   display: flex;
   gap: 2rem;
-  position: relative;
-  z-index: 1;
+  padding: 4rem;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .card {
-  background: var(--card-bg);
-  backdrop-filter: var(--blur);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   padding: 2rem;
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
-  transition: 0.3s ease;
-}
-
-.card:hover {
-  transform: scale(1.02);
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
 }
 
 .profile-card {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  flex: 1;
   align-items: center;
   text-align: center;
-  width: 250px;
 }
 
 .profile-img {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 1rem;
   border: 3px solid var(--neon);
+  z-index: 2;
+  position: relative;
+}
+
+.profile-bubble {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 220px;
+  background: rgba(0, 0, 0, 0.3);
+  filter: blur(20px);
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .username {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .socials {
+  margin-top: 1rem;
   display: flex;
+  justify-content: center;
   gap: 1rem;
 }
 
 .socials a {
   color: var(--neon);
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   transition: 0.3s ease;
 }
 
@@ -107,55 +93,85 @@ body {
 }
 
 .setup-card {
-  max-width: 500px;
+  flex: 2;
 }
 
 .setup {
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-top: 1rem;
+  gap: 1.2rem;
 }
 
 .setup-item {
+  width: 120px;
+  height: 120px;
   perspective: 1000px;
-  width: 100px;
-  height: 100px;
 }
 
-.flip-card-inner {
+.flip-card {
   width: 100%;
   height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
   position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
-.setup-item:hover .flip-card-inner {
+.setup-item:hover .flip-card {
   transform: rotateY(180deg);
 }
 
-.flip-card-front,
-.flip-card-back {
+.flip-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.flip-front, .flip-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.08);
+  backface-visibility: hidden;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  backface-visibility: hidden;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
-  font-size: 1.2rem;
+  flex-direction: column;
   text-align: center;
+  font-size: 0.85rem;
   padding: 0.5rem;
 }
 
-.flip-card-front i {
-  font-size: 1.5rem;
+.flip-front {
+  color: var(--white);
 }
 
-.flip-card-back {
+.flip-front i {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.flip-back {
   transform: rotateY(180deg);
+  font-weight: bold;
+  color: var(--neon);
+}
+
+.bubble-background {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background: rgba(0,0,0,0.3);
+  filter: blur(80px);
+  border-radius: 50%;
+  animation: float 20s infinite ease-in-out;
+  z-index: 0;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(100px, 80px); }
 }
