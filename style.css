@@ -1,11 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
-
-:root {
-  --bg-color: #0f0f0f;
-  --neon: #00ffff;
-  --white: #ffffff;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -13,165 +5,129 @@
 }
 
 body {
-  background: url("https://wallpapers-clan.com/wp-content/uploads/2025/04/mimikyu-shy-forest-hide-pokemon-laptop-wallpaper-preview.jpg") no-repeat center center/cover;
-  font-family: 'Outfit', sans-serif;
-  color: var(--white);
-  overflow-x: hidden;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('https://wallpapercave.com/wp/wp10295957.jpg') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  z-index: -1;
 }
 
 .container {
   display: flex;
-  gap: 2rem;
-  padding: 4rem;
-  max-width: 1200px;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 40px;
+  padding: 20px;
 }
 
-.card {
-  background: rgba(255, 255, 255, 0.05);
+.profile-card, .setup-section {
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 0 30px rgba(0,0,0,0.3);
-  backdrop-filter: blur(10px);
+  padding: 30px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
 .profile-card {
-  position: relative;
-  flex: 1;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  text-align: center;
+  min-width: 250px;
 }
 
-.profile-img {
-  width: 140px;
-  height: 140px;
+.avatar {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
+  border: 3px solid cyan;
   object-fit: cover;
-  border: 3px solid var(--neon);
-  z-index: 2;
-  position: relative;
 }
 
-.profile-bubble {
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 220px;
-  height: 220px;
-  background: rgba(0, 0, 0, 0.3);
-  filter: blur(20px);
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.username {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-top: 1rem;
+.profile-card h1 {
+  margin-top: 15px;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .socials {
-  margin-top: 1rem;
+  margin-top: 15px;
   display: flex;
-  justify-content: center;
-  gap: 1rem;
+  gap: 15px;
 }
 
-.socials a {
-  color: var(--neon);
-  font-size: 1.4rem;
-  transition: 0.3s ease;
+.socials i {
+  font-size: 20px;
+  color: white;
+  transition: transform 0.2s, color 0.3s;
 }
 
-.socials a:hover {
-  transform: scale(1.3);
+.socials i:hover {
+  transform: scale(1.2);
+  color: cyan;
 }
 
-.setup-card {
-  flex: 2;
+.setup-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.setup {
-  margin-top: 1rem;
+.setup-section h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
+  gap: 15px;
 }
 
-.setup-item {
+.card {
   width: 120px;
   height: 120px;
   perspective: 1000px;
 }
 
-.flip-card {
+.card-inner {
   width: 100%;
   height: 100%;
-  position: relative;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  position: relative;
 }
 
-.setup-item:hover .flip-card {
+.card:hover .card-inner {
   transform: rotateY(180deg);
 }
 
-.flip-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.flip-front, .flip-back {
+.card-front,
+.card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  backface-visibility: hidden;
-  background: rgba(255, 255, 255, 0.05);
   border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  font-size: 0.85rem;
-  padding: 0.5rem;
-}
-
-.flip-front {
-  color: var(--white);
-}
-
-.flip-front i {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.flip-back {
-  transform: rotateY(180deg);
   font-weight: bold;
-  color: var(--neon);
+  font-size: 14px;
+  color: white;
+  backface-visibility: hidden;
 }
 
-.bubble-background {
-  position: fixed;
-  top: -100px;
-  left: -100px;
-  width: 500px;
-  height: 500px;
-  background: rgba(0,0,0,0.3);
-  filter: blur(80px);
-  border-radius: 50%;
-  animation: float 20s infinite ease-in-out;
-  z-index: 0;
-}
-
-@keyframes float {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(100px, 80px); }
+.card-back {
+  transform: rotateY(180deg);
 }
