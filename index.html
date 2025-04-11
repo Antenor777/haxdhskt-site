@@ -1,68 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>haxdhskt</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <div class="background"></div>
-
   <div class="container">
-    <div class="profile-card">
-      <img src="https://i.pinimg.com/736x/9c/ad/ba/9cadbad08a172bed4b3b1199ec478432.jpg" class="avatar" />
-      <h1>haxdhskt</h1>
-      <div class="socials">
-        <a href="https://discord.gg/zPWNEAsZK9" target="_blank"><i class="fab fa-discord"></i></a>
-        <a href="https://youtube.com/@diabolicboyff?si=RpFjVZlU4GZhOI3Z" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/diabolicboy_" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@diabolicboy_" target="_blank"><i class="fab fa-tiktok"></i></a>
+
+    <!-- CARD 1 - PERFIL -->
+    <div class="card card1">
+      <h2><i class="fas fa-check-circle verified-badge"></i> haxdhskt</h2>
+      <img src="https://i.pinimg.com/736x/9c/ad/ba/9cadbad08a172bed4b3b1199ec478432.jpg" alt="profile" class="produto">
+
+      <div class="social-buttons">
+        <a href="https://www.instagram.com/diabolicboy_?igsh=ajVpM3Y0cWxmbm5w&utm_source=qr" class="social-btn instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@diabolicboyff?si=RpFjVZlU4GZhOI3Z" class="social-btn youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@diabolicboy_?_t=ZM-8vPpH0O8z4Q&_r=1" class="social-btn tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://discord.gg/zPWNEAsZK9" class="social-btn discord" target="_blank"><i class="fab fa-discord"></i></a>
+      </div>
+
+      <button onclick="abrirModal()">Info</button>
+    </div>
+
+    <!-- CARD 2 - SETUP -->
+    <div class="card card2">
+      <h2>Setup</h2>
+      <div class="peripherals-container">
+
+        <div class="peripheral-item">
+          <div class="peripheral-item-inner">
+            <div class="peripheral-item-front">
+              <img src="assets/imagens/cpu.png" alt="CPU">
+              <span>CPU</span>
+            </div>
+            <div class="peripheral-item-back">
+              <p>i5-9400F</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="peripheral-item">
+          <div class="peripheral-item-inner">
+            <div class="peripheral-item-front">
+              <img src="assets/imagens/placa-de-video.png" alt="GPU">
+              <span>GPU</span>
+            </div>
+            <div class="peripheral-item-back">
+              <p>RTX 3050</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="peripheral-item">
+          <div class="peripheral-item-inner">
+            <div class="peripheral-item-front">
+              <img src="assets/imagens/ram.png" alt="RAM">
+              <span>RAM</span>
+            </div>
+            <div class="peripheral-item-back">
+              <p>16GB RAM</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="peripheral-item">
+          <div class="peripheral-item-inner">
+            <div class="peripheral-item-front">
+              <img src="assets/imagens/teclado.png" alt="Teclado">
+              <span>TECLADO</span>
+            </div>
+            <div class="peripheral-item-back">
+              <p>Razer DeathStalker V2 Pro</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="peripheral-item">
+          <div class="peripheral-item-inner">
+            <div class="peripheral-item-front">
+              <img src="assets/imagens/mouse.png" alt="Mouse">
+              <span>MOUSE</span>
+            </div>
+            <div class="peripheral-item-back">
+              <p>Razer Basilisk V3 Pro</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="peripheral-item">
+          <div class="peripheral-item-inner">
+            <div class="peripheral-item-front">
+              <img src="assets/imagens/headset.png" alt="Headset">
+              <span>HEADSET</span>
+            </div>
+            <div class="peripheral-item-back">
+              <p>Redragon Lamia V2</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="setup-section">
-      <h2>Setup</h2>
-      <div class="cards">
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">CPU</div>
-            <div class="card-back">i5-9400F</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">GPU</div>
-            <div class="card-back">RTX 3050</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">RAM</div>
-            <div class="card-back">16GB DDR4</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Teclado</div>
-            <div class="card-back">Razer DeathStalker V2 Pro</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Mouse</div>
-            <div class="card-back">Razer Basilisk V3 Pro</div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">Headset</div>
-            <div class="card-back">Redragon Lamia V2</div>
-          </div>
-        </div>
-      </div>
+  </div>
+
+  <!-- MODAL -->
+  <div class="janela-modal" id="janela-modal">
+    <div class="modal">
+      <button class="fechar" id="fechar">X</button>
+      <h1>Informações</h1>
+      <p>Coloque aqui alguma bio ou outras infos se quiser.</p>
     </div>
   </div>
+
+  <!-- Tilt Effect -->
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+  <script>
+    VanillaTilt.init(document.querySelectorAll(".card, .peripheral-item"), {
+      max: 25,
+      speed: 400,
+      glare: true,
+      "max-glare": 0.3
+    });
+  </script>
+
+  <!-- Modal Logic -->
+  <script>
+    const modal = document.getElementById('janela-modal');
+    document.getElementById('fechar').addEventListener('click', () => modal.style.display = 'none');
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
+    function abrirModal() { modal.style.display = 'flex'; }
+  </script>
+
 </body>
 </html>
