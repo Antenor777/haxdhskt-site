@@ -1,140 +1,97 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>haxdhskt</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
-  <div class="background"></div>
-  <div class="container">
+<!-- CARD 2 - SETUP -->
+<div class="card card2">
+  <h2>Setup</h2>
+  <div class="peripherals-container">
 
-    <!-- CARD 1 - PERFIL -->
-    <div class="card card1">
-      <h2><i class="fas fa-check-circle verified-badge"></i> haxdhskt</h2>
-      <img src="https://i.pinimg.com/736x/9c/ad/ba/9cadbad08a172bed4b3b1199ec478432.jpg" alt="profile" class="produto">
-
-      <div class="social-buttons">
-        <a href="https://www.instagram.com/diabolicboy_?igsh=ajVpM3Y0cWxmbm5w&utm_source=qr" class="social-btn instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://youtube.com/@diabolicboyff?si=RpFjVZlU4GZhOI3Z" class="social-btn youtube" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.tiktok.com/@diabolicboy_?_t=ZM-8vPpH0O8z4Q&_r=1" class="social-btn tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
-        <a href="https://discord.gg/zPWNEAsZK9" class="social-btn discord" target="_blank"><i class="fab fa-discord"></i></a>
+    <!-- CPU -->
+    <div class="peripheral-item">
+      <div class="peripheral-item-inner">
+        <div class="peripheral-item-front">
+          <div class="peripheral-icon">
+            <img src="assets/imagens/cpu.png" alt="CPU">
+          </div>
+          <div class="peripheral-text">CPU</div>
+        </div>
+        <div class="peripheral-item-back">
+          i5-9400F
+        </div>
       </div>
-
-      <button onclick="abrirModal()">Info</button>
     </div>
 
-    <!-- CARD 2 - SETUP -->
-    <div class="card card2">
-      <h2>Setup</h2>
-      <div class="peripherals-container">
-
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <img src="assets/imagens/cpu.png" alt="CPU">
-              <span>CPU</span>
-            </div>
-            <div class="peripheral-item-back">
-              <p>i5-9400F</p>
-            </div>
+    <!-- GPU -->
+    <div class="peripheral-item">
+      <div class="peripheral-item-inner">
+        <div class="peripheral-item-front">
+          <div class="peripheral-icon">
+            <img src="assets/imagens/placa-de-video.png" alt="GPU">
           </div>
+          <div class="peripheral-text">GPU</div>
         </div>
+        <div class="peripheral-item-back">
+          RTX 3050
+        </div>
+      </div>
+    </div>
 
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <img src="assets/imagens/placa-de-video.png" alt="GPU">
-              <span>GPU</span>
-            </div>
-            <div class="peripheral-item-back">
-              <p>RTX 3050</p>
-            </div>
+    <!-- RAM -->
+    <div class="peripheral-item">
+      <div class="peripheral-item-inner">
+        <div class="peripheral-item-front">
+          <div class="peripheral-icon">
+            <img src="assets/imagens/ram.png" alt="RAM">
           </div>
+          <div class="peripheral-text">RAM</div>
         </div>
+        <div class="peripheral-item-back">
+          16GB RAM
+        </div>
+      </div>
+    </div>
 
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <img src="assets/imagens/ram.png" alt="RAM">
-              <span>RAM</span>
-            </div>
-            <div class="peripheral-item-back">
-              <p>16GB RAM</p>
-            </div>
+    <!-- TECLADO -->
+    <div class="peripheral-item">
+      <div class="peripheral-item-inner">
+        <div class="peripheral-item-front">
+          <div class="peripheral-icon">
+            <img src="assets/imagens/teclado.png" alt="Teclado">
           </div>
+          <div class="peripheral-text">TECLADO</div>
         </div>
+        <div class="peripheral-item-back">
+          Razer DeathStalker V2 Pro
+        </div>
+      </div>
+    </div>
 
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <img src="assets/imagens/teclado.png" alt="Teclado">
-              <span>TECLADO</span>
-            </div>
-            <div class="peripheral-item-back">
-              <p>Razer DeathStalker V2 Pro</p>
-            </div>
+    <!-- MOUSE -->
+    <div class="peripheral-item">
+      <div class="peripheral-item-inner">
+        <div class="peripheral-item-front">
+          <div class="peripheral-icon">
+            <img src="assets/imagens/mouse.png" alt="Mouse">
           </div>
+          <div class="peripheral-text">MOUSE</div>
         </div>
+        <div class="peripheral-item-back">
+          Razer Basilisk V3 Pro
+        </div>
+      </div>
+    </div>
 
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <img src="assets/imagens/mouse.png" alt="Mouse">
-              <span>MOUSE</span>
-            </div>
-            <div class="peripheral-item-back">
-              <p>Razer Basilisk V3 Pro</p>
-            </div>
+    <!-- HEADSET -->
+    <div class="peripheral-item">
+      <div class="peripheral-item-inner">
+        <div class="peripheral-item-front">
+          <div class="peripheral-icon">
+            <img src="assets/imagens/headset.png" alt="Headset">
           </div>
+          <div class="peripheral-text">HEADSET</div>
         </div>
-
-        <div class="peripheral-item">
-          <div class="peripheral-item-inner">
-            <div class="peripheral-item-front">
-              <img src="assets/imagens/headset.png" alt="Headset">
-              <span>HEADSET</span>
-            </div>
-            <div class="peripheral-item-back">
-              <p>Redragon Lamia V2</p>
-            </div>
-          </div>
+        <div class="peripheral-item-back">
+          Redragon Lamia V2
         </div>
-
       </div>
     </div>
 
   </div>
-
-  <!-- MODAL -->
-  <div class="janela-modal" id="janela-modal">
-    <div class="modal">
-      <button class="fechar" id="fechar">X</button>
-      <h1>Informações</h1>
-      <p>Coloque aqui alguma bio ou outras infos se quiser.</p>
-    </div>
-  </div>
-
-  <!-- Tilt Effect -->
-  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
-  <script>
-    VanillaTilt.init(document.querySelectorAll(".card, .peripheral-item"), {
-      max: 25,
-      speed: 400,
-      glare: true,
-      "max-glare": 0.3
-    });
-  </script>
-
-  <!-- Modal Logic -->
-  <script>
-    const modal = document.getElementById('janela-modal');
-    document.getElementById('fechar').addEventListener('click', () => modal.style.display = 'none');
-    modal.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
-    function abrirModal() { modal.style.display = 'flex'; }
-  </script>
-
-</body>
-</html>
+</div>
